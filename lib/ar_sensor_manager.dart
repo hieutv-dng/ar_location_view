@@ -60,6 +60,10 @@ class ArSensorManager {
       }
     });
 
+    Geolocator.getLastKnownPosition().then((position) {
+      _position = position;
+    });
+
     _positionSubscription =
         Geolocator.getPositionStream().listen((Position position) {
       _position = position;
